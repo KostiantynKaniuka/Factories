@@ -14,6 +14,7 @@
 		E7AF8294290BDA8400FAE3FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AF8293290BDA8400FAE3FC /* Assets.xcassets */; };
 		E7AF8297290BDA8400FAE3FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AF8295290BDA8400FAE3FC /* LaunchScreen.storyboard */; };
 		E7D22214290FC2BD0072C57C /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D22213290FC2BD0072C57C /* OnboardingContainerViewController.swift */; };
+		E7D22216290FD6390072C57C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D22215290FD6390072C57C /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E7AF8296290BDA8400FAE3FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7AF8298290BDA8400FAE3FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7D22213290FC2BD0072C57C /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
+		E7D22215290FD6390072C57C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D22213290FC2BD0072C57C /* OnboardingContainerViewController.swift */,
+				E7D22215290FD6390072C57C /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E707EAE9290BE157004070C6 /* LoginView.swift in Sources */,
+				E7D22216290FD6390072C57C /* OnboardingViewController.swift in Sources */,
 				E7AF828F290BDA8300FAE3FC /* LogInViewController.swift in Sources */,
 				E7AF828B290BDA8300FAE3FC /* AppDelegate.swift in Sources */,
 				E7D22214290FC2BD0072C57C /* OnboardingContainerViewController.swift in Sources */,
