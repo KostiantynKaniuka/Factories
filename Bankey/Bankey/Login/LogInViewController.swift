@@ -7,12 +7,22 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LogInViewControllerDelegate: AnyObject {
+    func didLogIn()
+}
+
 class LogInViewController: UIViewController {
     
     let loginView = LoginView()
     let topLabelsView = TopLabelsView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LogInViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -26,6 +36,11 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -104,15 +119,17 @@ extension LogInViewController {
             return
         }
         
-        if username == "Kevin" && password == "Welcome" {
+        if username == "Kevin" && password == "123" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogIn()
         } else {
             configureView(withMessage: "Incorrect username / password")
         }
     }
+        
+        private func configureView(withMessage message: String) {
+            errorMessageLabel.isHidden = false
+            errorMessageLabel.text = message
+        }
     
-    private func configureView(withMessage message: String) {
-        errorMessageLabel.isHidden = false
-        errorMessageLabel.text = message
-    }
 }

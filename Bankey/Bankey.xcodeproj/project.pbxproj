@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E707EAE9290BE157004070C6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E707EAE8290BE157004070C6 /* LoginView.swift */; };
 		E707EAEB290C3114004070C6 /* TopLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E707EAEA290C3114004070C6 /* TopLabelsView.swift */; };
+		E7188D3029113977000C8C7B /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7188D2F29113977000C8C7B /* DummyViewController.swift */; };
+		E7188D3329115BEE000C8C7B /* LocalState .swift in Sources */ = {isa = PBXBuildFile; fileRef = E7188D3229115BEE000C8C7B /* LocalState .swift */; };
 		E7AF828B290BDA8300FAE3FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF828A290BDA8300FAE3FC /* AppDelegate.swift */; };
 		E7AF828F290BDA8300FAE3FC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AF828E290BDA8300FAE3FC /* LogInViewController.swift */; };
 		E7AF8294290BDA8400FAE3FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7AF8293290BDA8400FAE3FC /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		E707EAE8290BE157004070C6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E707EAEA290C3114004070C6 /* TopLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLabelsView.swift; sourceTree = "<group>"; };
+		E7188D2F29113977000C8C7B /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		E7188D3229115BEE000C8C7B /* LocalState .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalState .swift"; sourceTree = "<group>"; };
 		E7AF8287290BDA8300FAE3FC /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7AF828A290BDA8300FAE3FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7AF828E290BDA8300FAE3FC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -57,8 +61,17 @@
 				E7AF828E290BDA8300FAE3FC /* LogInViewController.swift */,
 				E707EAE8290BE157004070C6 /* LoginView.swift */,
 				E707EAEA290C3114004070C6 /* TopLabelsView.swift */,
+				E7188D2F29113977000C8C7B /* DummyViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E7188D3129115BBB000C8C7B /* Utlis */ = {
+			isa = PBXGroup;
+			children = (
+				E7188D3229115BEE000C8C7B /* LocalState .swift */,
+			);
+			path = Utlis;
 			sourceTree = "<group>";
 		};
 		E7AF827E290BDA8300FAE3FC = {
@@ -80,6 +93,7 @@
 		E7AF8289290BDA8300FAE3FC /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				E7188D3129115BBB000C8C7B /* Utlis */,
 				E7D22212290FC2580072C57C /* Onboarding */,
 				E707EAE7290BE112004070C6 /* Login */,
 				E7AF828A290BDA8300FAE3FC /* AppDelegate.swift */,
@@ -167,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7188D3329115BEE000C8C7B /* LocalState .swift in Sources */,
+				E7188D3029113977000C8C7B /* DummyViewController.swift in Sources */,
 				E707EAE9290BE157004070C6 /* LoginView.swift in Sources */,
 				E7D22216290FD6390072C57C /* OnboardingViewController.swift in Sources */,
 				E7AF828F290BDA8300FAE3FC /* LogInViewController.swift in Sources */,
