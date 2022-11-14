@@ -37,6 +37,8 @@ extension TopLabelsView {
         bankeyLabel.text = "Bankey"
         bankeyLabel.font = UIFont.boldSystemFont(ofSize: 32)
         bankeyLabel.translatesAutoresizingMaskIntoConstraints = false
+        bankeyLabel.alpha = 0 
+      
         
         midLabel.translatesAutoresizingMaskIntoConstraints = false
         midLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +46,7 @@ extension TopLabelsView {
         midLabel.numberOfLines = 0
         midLabel.text = "Your premium source for all things banking"
         midLabel.translatesAutoresizingMaskIntoConstraints = false
+        midLabel.alpha = 0
     }
     
     private func layout() {

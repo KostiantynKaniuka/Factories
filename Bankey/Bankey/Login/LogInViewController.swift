@@ -32,6 +32,12 @@ class LogInViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    //animation
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var titleLeadingAnchor: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -41,6 +47,11 @@ class LogInViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidAppear(animated)
         signInButton.configuration?.showsActivityIndicator = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
     }
 }
 
@@ -72,9 +83,11 @@ extension LogInViewController {
        //Top Labels View
        NSLayoutConstraint.activate([
         topLabelsView.bottomAnchor.constraint(equalTo: loginView.topAnchor, constant: -3),
-        topLabelsView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-        view.trailingAnchor.constraint(equalToSystemSpacingAfter: topLabelsView.trailingAnchor, multiplier: 1)
+        topLabelsView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
        ])
+       
+       titleLeadingAnchor = topLabelsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+       titleLeadingAnchor?.isActive = true
        
        //Log in view
        NSLayoutConstraint.activate([
@@ -131,5 +144,24 @@ extension LogInViewController {
             errorMessageLabel.isHidden = false
             errorMessageLabel.text = message
         }
+}
+
+//MARK: - Animations
+extension LogInViewController {
     
+    private func animate() {
+        let duration = 2.0
+        let animator1 = UIViewPropertyAnimator(duration: duration, curve: .easeInOut) {
+            self.titleLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        animator1.startAnimation()
+        
+        let animator2 = UIViewPropertyAnimator(duration: duration*2, curve: .easeInOut) {
+            self.topLabelsView.midLabel.alpha = 1
+            self.topLabelsView.bankeyLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        animator2.startAnimation(afterDelay: 1)
+    }
 }
