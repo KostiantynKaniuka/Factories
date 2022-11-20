@@ -18,6 +18,8 @@
 		E7336D912912BD6E0097A9E1 /* AccoundSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7336D902912BD6E0097A9E1 /* AccoundSummaryHeaderView.xib */; };
 		E7353D3A292A72DC00706EE4 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7353D39292A72DC00706EE4 /* Date+Utils.swift */; };
 		E7353D3C292A798F00706EE4 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7353D3B292A798F00706EE4 /* AccountSummaryViewController+Networking.swift */; };
+		E7353D40292A928900706EE4 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7353D3F292A928900706EE4 /* ProfileTests.swift */; };
+		E7353D42292A937300706EE4 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7353D41292A937300706EE4 /* AccountTests.swift */; };
 		E74DFC66292261920007D97D /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74DFC65292261920007D97D /* ShakeyBellView.swift */; };
 		E76821B3291AAC7E00647EE0 /* CurrencyFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76821B2291AAC7E00647EE0 /* CurrencyFormatterTest.swift */; };
 		E77A090A291EA72000CACF0C /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A0909291EA72000CACF0C /* NSNotificationName.swift */; };
@@ -55,6 +57,8 @@
 		E7336D902912BD6E0097A9E1 /* AccoundSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccoundSummaryHeaderView.xib; sourceTree = "<group>"; };
 		E7353D39292A72DC00706EE4 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		E7353D3B292A798F00706EE4 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		E7353D3F292A928900706EE4 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		E7353D41292A937300706EE4 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		E74DFC65292261920007D97D /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		E76821A9291AAC6000647EE0 /* BankeyCurrencyFormatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankeyCurrencyFormatterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76821B2291AAC7E00647EE0 /* CurrencyFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatterTest.swift; sourceTree = "<group>"; };
@@ -137,6 +141,23 @@
 			path = AccountSummary;
 			sourceTree = "<group>";
 		};
+		E7353D3D292A924B00706EE4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				E76821B2291AAC7E00647EE0 /* CurrencyFormatterTest.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		E7353D3E292A925D00706EE4 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				E7353D3F292A928900706EE4 /* ProfileTests.swift */,
+				E7353D41292A937300706EE4 /* AccountTests.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
 		E74DFC64292261370007D97D /* Components  */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +169,8 @@
 		E76821AA291AAC6000647EE0 /* BankeyCurrencyFormatterTests */ = {
 			isa = PBXGroup;
 			children = (
-				E76821B2291AAC7E00647EE0 /* CurrencyFormatterTest.swift */,
+				E7353D3E292A925D00706EE4 /* AccountSummary */,
+				E7353D3D292A924B00706EE4 /* Util */,
 			);
 			path = BankeyCurrencyFormatterTests;
 			sourceTree = "<group>";
@@ -315,6 +337,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76821B3291AAC7E00647EE0 /* CurrencyFormatterTest.swift in Sources */,
+				E7353D42292A937300706EE4 /* AccountTests.swift in Sources */,
+				E7353D40292A928900706EE4 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

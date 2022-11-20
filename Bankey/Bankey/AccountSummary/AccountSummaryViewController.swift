@@ -110,8 +110,8 @@ extension AccountSummaryViewController {
 
 // MARK: - Networking
 extension AccountSummaryViewController {
+    
     private func fetchDataAndLoadViews() {
-        
         fetchProfile(forUserId: "1") { result in
             switch result {
             case .success(let profile):
@@ -122,6 +122,7 @@ extension AccountSummaryViewController {
                 print(error.localizedDescription)
             }
         }
+        
         fetchAccounts(forUserId: "1") { result in
             switch result {
             case .success(let accounts):
