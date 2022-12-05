@@ -26,6 +26,7 @@ struct Profile: Codable {
 }
 
 extension AccountSummaryViewController {
+    
     func fetchProfile(forUserId userId: String, completion: @escaping (Result<Profile,NetworkError>) -> Void) {
         let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)")!
         
@@ -35,7 +36,6 @@ extension AccountSummaryViewController {
                     completion(.failure(.serverError))
                     return
                 }
-                
                 do {
                     let profile = try JSONDecoder().decode(Profile.self, from: data)
                     completion(.success(profile))
@@ -56,6 +56,7 @@ struct Account: Codable {
 }
 
 extension AccountSummaryViewController {
+    
     func fetchAccounts(forUserId userId: String, completion: @escaping (Result<[Account],NetworkError>) -> Void) {
         let url = URL(string: "https://fierce-retreat-36855.herokuapp.com/bankey/profile/\(userId)/accounts")!
 
@@ -65,7 +66,6 @@ extension AccountSummaryViewController {
                     completion(.failure(.serverError))
                     return
                 }
-                
                 do {
                     let decoder = JSONDecoder()
                     decoder.dateDecodingStrategy = .iso8601

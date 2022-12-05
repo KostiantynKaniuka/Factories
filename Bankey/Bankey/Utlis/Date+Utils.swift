@@ -10,7 +10,7 @@ import Foundation
 extension Date {
     static var bankeyDateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.timeZone = TimeZone(abbreviation: "MDT")
+        formatter.timeZone = TimeZone(abbreviation: "GTM+2")
         return formatter
     }
     
