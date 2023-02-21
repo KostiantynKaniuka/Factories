@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ChatApp
+//  GoodNews
 //
-//  Created by Kostiantyn Kaniuka on 07.02.2023.
+//  Created by Kostiantyn Kaniuka on 21.02.2023.
 //
 
 import UIKit
@@ -13,7 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
         return true
     }
 

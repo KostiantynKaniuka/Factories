@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  ChatApp
+//  GoodNews
 //
-//  Created by Kostiantyn Kaniuka on 07.02.2023.
+//  Created by Kostiantyn Kaniuka on 21.02.2023.
 //
 
 import UIKit
