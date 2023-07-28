@@ -27,7 +27,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBAction func addAnnotationButtonPressed() {
     let annotation = BakayaroAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 35.011635, longitude: 135.768036)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: 35.652832, longitude: 139.839478)
         annotation.title = "BAKAYARO"
         annotation.subtitle = "berserk"
         annotation.imageUrl = "guts"
@@ -55,6 +55,32 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+private func configureView(_ annotationView: MKAnnotationView?) {
+    let snapShotSize = CGSize(width: 200, height: 200)
+    let snapShotView = UIView(frame: CGRect.zero)
+    snapShotView.translatesAutoresizingMaskIntoConstraints = false
+    snapShotView.widthAnchor.constraint(equalToConstant: snapShotSize.width).isActive = true
+    snapShotView.heightAnchor.constraint(equalToConstant: snapShotSize.height).isActive = true
+    
+    let options = MKMapSnapshotter.Options()
+    options.size = snapShotSize
+    options.mapType = .satelliteFlyover
+    options.camera = MKMapCamera(lookingAtCenter: (annotationView?.annotation?.coordinate)!, fromDistance: 10, pitch: 65, heading: 0)
+    let snapShotter = MKMapSnapshotter(options: options)
+    snapShotter.start { (snapshot, error) in
+        if let error = error {
+            print(error.localizedDescription)
+        }
+        if let snapshot = snapshot {
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: snapShotSize.width, height: snapShotSize.height))
+            imageView.image = snapshot.image
+            snapShotView.addSubview(imageView)
+        }
+    }
+    annotationView?.detailCalloutAccessoryView = snapShotView
+    
+}
+
 extension MapsViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -63,16 +89,25 @@ extension MapsViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var bakayaroAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "BakayaroAnnotationView")
+        
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        var bakayaroAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "BakayaroAnnotationView") as? MKMarkerAnnotationView
         if bakayaroAnnotationView == nil {
-            bakayaroAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "CoffeAnnotationView")
+            bakayaroAnnotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "CoffeAnnotationView")
+            bakayaroAnnotationView?.glyphText = "🤣"
+            bakayaroAnnotationView?.markerTintColor = UIColor.cyan
+            bakayaroAnnotationView?.glyphImage = UIImage(named: "guts")
             bakayaroAnnotationView?.canShowCallout = true
         } else {
             bakayaroAnnotationView?.annotation = annotation
         }
-        if let bakayaroAnnotation = annotation as? BakayaroAnnotation {
-            bakayaroAnnotationView?.image = UIImage(named: bakayaroAnnotation.imageUrl)
-        }
+//        if let bakayaroAnnotation = annotation as? BakayaroAnnotation {
+//            bakayaroAnnotationView?.image = UIImage(named: bakayaroAnnotation.imageUrl)
+//        }
+        configureView(bakayaroAnnotationView)
         return bakayaroAnnotationView
     }
 }
